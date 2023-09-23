@@ -1,0 +1,29 @@
+{
+  "name": "node-ttastromech",
+  "version": "1.0.0",
+  "description": "A node js varient of the Python library ttastromech",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilburforce83/node-ttastromech.git"
+  },
+  "keywords": [
+    "astromech",
+    "text",
+    "to",
+    "speech",
+    "star",
+    "wars",
+    "python",
+    "conversion"
+  ],
+  "author": "Will Shearer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/wilburforce83/node-ttastromech/issues"
+  },
+  "homepage": "https://github.com/wilburforce83/node-ttastromech#readme"
+}
