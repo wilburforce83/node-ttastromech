@@ -25,5 +25,11 @@
   "bugs": {
     "url": "https://github.com/wilburforce83/node-ttastromech/issues"
   },
-  "homepage": "https://github.com/wilburforce83/node-ttastromech#readme"
+  "homepage": "https://github.com/wilburforce83/node-ttastromech#readme",
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "audioconcat": "^0.1.4",
+    "fluent-ffmpeg": "^2.1.2",
+    "wav-concat": "^1.0.3"
+  }
 }
