@@ -19,7 +19,7 @@ After installtion call the module using:
 then, for example;
 
 ```
-const astromech = droidChatter.astro;
+const astro = droidChatter.astro;
 const bd1 = droidChatter.bd1;`
 ```
 
@@ -34,9 +34,8 @@ droidChatter.mouse // mouse droid sounds
 ### Arguments
 
 #### Astromech
-Some droid voices have arguments available, astromech will take a string, and method. Where the string is the text to translate, and the method is either "full", or "short". `'full'` will translate every character into astromech, whereas `'short'` will take the first character of each word. This is because some sentances are far too long to output in full.
 
-e.g;
+example;
 
 ```
 const droidChatter = require('node-ttastromech'); // import module
@@ -44,5 +43,7 @@ const astromech = droidChatter.astro; // astromech voice
 
 var string = "Hello, I'm R2D2, beep boop." // string to translate
 
-let usableWavFile = astromech(string,'full'); // returned wav file for use however you want.
+let usableWavFile = astromech(string); // translate and playback the file on the host machine
 ```
+
+At the moment, there is no way to play the file through a client machine if this package is used on a webserver. It has been designed to run on a host machine used as "brain" for prop and puppet droid builds.

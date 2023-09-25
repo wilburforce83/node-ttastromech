@@ -30,6 +30,9 @@
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "audioconcat": "^0.1.4",
     "fluent-ffmpeg": "^2.1.2",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "speaker": "^0.5.4",
     "wav-concat": "^1.0.3"
   }
 }
