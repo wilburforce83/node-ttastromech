@@ -42,8 +42,7 @@ const droidChatter = require('node-ttastromech'); // import module
 const astromech = droidChatter.astro; // astromech voice
 
 var string = "Hello, I'm R2D2, beep boop." // string to translate
-
-let usableWavFile = astromech(string); // translate and playback the file on the host machine
+droidChatter.astro(string); // translate to astromech and play back
 ```
 
 At the moment, there is no way to play the file through a client machine if this package is used on a webserver. It has been designed to run on a host machine used as "brain" for prop and puppet droid builds.
