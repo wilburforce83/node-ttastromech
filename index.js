@@ -1,13 +1,12 @@
 //index.js
-const Speaker = require('speaker');
-const fs = require('fs');
-const path = require('path');
+const translate = require('./engine/translateEngine.js');
+
 
 module.exports = {
     astro: function (string) {
         // function do stuff
 
-        translateEngine(removeNonLetters(string), "astro");
+        translate.Engine(removeNonLetters(string), "astro");
         return console.log("astro translation has completed! May the force be with you.");
     },
 
@@ -16,7 +15,7 @@ module.exports = {
     astroRand: function (length) {
         // function do stuff
 
-        translateEngine(generateRandomString(length), "astro");
+        translate.Engine(generateRandomString(length), "astro");
         return console.log("astro randomiser translation has completed! May the force be with you.");
     },
 
@@ -25,7 +24,7 @@ module.exports = {
 
     bd1: function (string, mood) {
         // function do stuff
-        translateEngine(removeNonLetters(string), "bd1", mood);
+        translate.Engine(removeNonLetters(string), "bd1", mood);
         return console.log("bd1 translation has completed! May the force be with you.");
     },
 
@@ -34,7 +33,7 @@ module.exports = {
 
     bd1Rand: function (length, mood) {
         // function do stuff
-        translateEngine(generateRandomString(length), "bd1", mood);
+        translate.Engine(generateRandomString(length), "bd1", mood);
         return console.log("bd1 randomiser translation has completed! May the force be with you.");
     },
 
@@ -67,81 +66,12 @@ module.exports = {
 
 
 
-
-// translation engine
-function translateEngine(string, droid, mood) {
-    var wavArray = [];
-    var whichDroid = "";
-    var format = ".wav";
-
-    if (droid == "astro") {
-        whichDroid = 'sounds/astro/';
-    };
-    if (droid == "bd1" && mood == "happy") {
-        whichDroid = 'sounds/bd1/Happy/';
-    };
-    if (droid == "bd1" && mood == "sad") {
-        whichDroid = 'sounds/bd1/Sad/';
-    };
-    if (droid == "bd1" && mood == "angry") {
-        whichDroid = 'sounds/bd1/Angry/';
-    };
-    for (let i = 0; i < string.length; i++) {
-        let character = string[i].toLowerCase();
-        let element = whichDroid + character + format;
-        console.log(whichDroid)
-        wavArray.push(element);
-
-        // Match character to file name somehow
-        // Then append wavArray with the matching wav file.
-    }
-    console.log(wavArray);
-    playWav(wavArray);
-};
-
-
-
-
 // remove all troublesome characters from string
 function removeNonLetters(inputString) {
     return inputString.replace(/[^a-zA-Z]/g, '');
 };
 
 
-
-
-//play wav files
-function playWav(wavArr) {
-
-    let currentIndex = 0;
-
-    function playNext() {
-        if (currentIndex >= wavArr.length) {
-            // console.log('All WAV files have been played.');
-            return;
-        }
-
-        const wavFilePath = path.resolve(__dirname, wavArr[currentIndex]);
-        const speaker = new Speaker();
-
-        const fileStream = fs.createReadStream(wavFilePath);
-        fileStream.pipe(speaker);
-
-        speaker.on('close', () => {
-            currentIndex++;
-            setTimeout(playNext, 80);
-        });
-
-        speaker.on('error', (err) => {
-            console.error('Error playing WAV file:', err);
-            currentIndex++;
-            playNext();
-        });
-    }
-
-    playNext();
-
-};
 
 
 
