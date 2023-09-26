@@ -1,7 +1,7 @@
 {
   "name": "node-ttastromech",
-  "version": "1.0.1",
-  "description": "A node js droid language generator built using the sound library inside python library ttastromech",
+  "version": "1.0.2",
+  "description": "A node js droid language generator built using the sound library inside python library ttastromech, as well as other sound sources found online",
   "main": "index.js",
   "scripts": {
     "test": "npm run test"
