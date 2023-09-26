@@ -86,11 +86,19 @@ function astroTranslate(string) {
     console.log(wavArray);
     playWav(wavArray);
 };
+
+
+
+
 // remove all troublesome characters from string
 function removeNonLetters(inputString) {
     return inputString.replace(/[^a-zA-Z]/g, '');
   };
-//play wav files
+
+
+
+
+  //play wav files
 function playWav(wavArr) {
 
     let currentIndex = 0;
@@ -122,6 +130,8 @@ function playWav(wavArr) {
     playNext();
 
 };
+
+
 
 
 //random string generator
