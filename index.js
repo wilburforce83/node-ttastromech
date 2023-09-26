@@ -4,11 +4,11 @@ const fs = require('fs');
 const path = require('path');
 
 module.exports = {
-    astro: function (string, style) {
+    astro: function (string) {
         // function do stuff
 
-        astroTranslate(removeNonLetters(string));
-        return console.log("astro function has completed! May the force be with you.");
+        translateEngine(removeNonLetters(string), "astro");
+        return console.log("astro translation has completed! May the force be with you.");
     },
 
 
@@ -16,30 +16,26 @@ module.exports = {
     astroRand: function (length) {
         // function do stuff
 
-        astroTranslate(generateRandomString(length));
-        return console.log("astro randomiser function has completed! May the force be with you.");
+        translateEngine(generateRandomString(length), "astro");
+        return console.log("astro randomiser translation has completed! May the force be with you.");
     },
 
 
 
 
-    bd1: function (mood) {
+    bd1: function (string, mood) {
         // function do stuff
-
-
-        let result = something; // send the array of wav files to wavconcat and return a single file
-        return result;
+        translateEngine(removeNonLetters(string), "bd1", mood);
+        return console.log("bd1 translation has completed! May the force be with you.");
     },
 
 
 
 
-    bd1Rand: function () {
+    bd1Rand: function (length, mood) {
         // function do stuff
-
-
-        let result = something; // send the array of wav files to wavconcat and return a single file
-        return result;
+        translateEngine(generateRandomString(length), "bd1", mood);
+        return console.log("bd1 randomiser translation has completed! May the force be with you.");
     },
 
 
@@ -72,12 +68,28 @@ module.exports = {
 
 
 
-// astromech translator
-function astroTranslate(string) {
+// translation engine
+function translateEngine(string, droid, mood) {
     var wavArray = [];
+    var whichDroid = "";
+    var format = ".wav";
+
+    if (droid == "astro") {
+        whichDroid = 'sounds/astro/';
+    };
+    if (droid == "bd1" && mood == "happy") {
+        whichDroid = 'sounds/bd1/Happy/';
+    };
+    if (droid == "bd1" && mood == "sad") {
+        whichDroid = 'sounds/bd1/Sad/';
+    };
+    if (droid == "bd1" && mood == "angry") {
+        whichDroid = 'sounds/bd1/Angry/';
+    };
     for (let i = 0; i < string.length; i++) {
         let character = string[i].toLowerCase();
-        let element = 'sounds/astro/' + character + '.wav'
+        let element = whichDroid + character + format;
+        console.log(whichDroid)
         wavArray.push(element);
 
         // Match character to file name somehow
@@ -93,19 +105,19 @@ function astroTranslate(string) {
 // remove all troublesome characters from string
 function removeNonLetters(inputString) {
     return inputString.replace(/[^a-zA-Z]/g, '');
-  };
+};
 
 
 
 
-  //play wav files
+//play wav files
 function playWav(wavArr) {
 
     let currentIndex = 0;
 
     function playNext() {
         if (currentIndex >= wavArr.length) {
-           // console.log('All WAV files have been played.');
+            // console.log('All WAV files have been played.');
             return;
         }
 
@@ -138,14 +150,14 @@ function playWav(wavArr) {
 function generateRandomString(length) {
     const alphabet = 'abcdefghijklmnopqrstuvwxyz';
     let randomString = '';
-  
+
     for (let i = 0; i < length; i++) {
-      const randomIndex = Math.floor(Math.random() * alphabet.length);
-      randomString += alphabet.charAt(randomIndex);
+        const randomIndex = Math.floor(Math.random() * alphabet.length);
+        randomString += alphabet.charAt(randomIndex);
     }
-  
+
     return randomString;
-  }
+}
 
 
 
