@@ -129,7 +129,7 @@ function playWav(wavArr) {
 
         speaker.on('close', () => {
             currentIndex++;
-            playNext();
+            setTimeout(playNext, 80);
         });
 
         speaker.on('error', (err) => {
