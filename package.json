@@ -1,7 +1,7 @@
 {
   "name": "node-ttastromech",
-  "version": "1.1.0",
-  "description": "A node js droid language generator built using the sound library inside python library ttastromech, as well as other sound sources found online",
+  "version": "1.1.1",
+  "description": "A node js droid language engine built using the sound library inside python library ttastromech, as well as other sound sources found online",
   "main": "index.js",
   "scripts": {
     "test": "npm run test"
@@ -19,7 +19,9 @@
     "wars",
     "python",
     "conversion",
-    "BD-1"
+    "BD-1",
+    "D-O",
+    "BB-8"
   ],
   "author": "Will Shearer",
   "license": "ISC",
