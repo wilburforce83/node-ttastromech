@@ -12,16 +12,16 @@ Engine: function(string, droid, mood) {
     var format = ".wav";
 
     if (droid == "astro") {
-        whichDroid = 'sounds/astro/';
+        whichDroid = '../sounds/astro/';
     };
     if (droid == "bd1" && mood == "happy") {
-        whichDroid = 'sounds/bd1/Happy/';
+        whichDroid = '../sounds/bd1/Happy/';
     };
     if (droid == "bd1" && mood == "sad") {
-        whichDroid = 'sounds/bd1/Sad/';
+        whichDroid = '../sounds/bd1/Sad/';
     };
     if (droid == "bd1" && mood == "angry") {
-        whichDroid = 'sounds/bd1/Angry/';
+        whichDroid = '../sounds/bd1/Angry/';
     };
     for (let i = 0; i < string.length; i++) {
         let character = string[i].toLowerCase();
