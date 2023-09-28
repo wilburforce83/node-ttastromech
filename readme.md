@@ -63,5 +63,29 @@ Other mood arguments available are `"sad"` and `"angry"` these are also availabl
 droidChatter.bd1Rand(3,"sad") // generate random sad chatter 3 characters long.
 ```
 
+#### D-O
+D-O is a speaking droid, so the usage is slightly different.
+
+Example;
+
+```
+droidChatter.do("batterycharged"); // D-O says "Battery Charged"
+```
+Other sounds for D-O
+* friendsahead
+* hello1
+* hello2
+* hello3
+* iamdo
+* imissher
+* nothanks1
+* nothanks2
+* sad
+* sosorryshesgone
+* squeekgone
+* squeeky
+* whatisthat
+* random
+
 ### Limitations
 At the moment, there is no way to play the file through a client machine if this package is used on a webserver. It has been designed to run on a host machine used as "brain" for prop and puppet droid builds, as such the audio will always be played directly from the host machine.

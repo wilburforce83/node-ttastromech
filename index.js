@@ -37,6 +37,11 @@ module.exports = {
         return console.log("bd1 randomiser translation has completed! May the force be with you.");
     },
 
+    do: function (phrase) {
+        translate.Direct(phrase, "do");
+        return console.log("d-o translation has completed! May the force be with you.");
+    },
+
 
 
     probeDroid: function (type) {
