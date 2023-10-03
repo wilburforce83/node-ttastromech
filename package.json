@@ -1,6 +1,6 @@
 {
   "name": "node-droid-language",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A node js droid language engine built using the sound library inside python library ttastromech, as well as other sound sources found online",
   "main": "index.js",
   "scripts": {

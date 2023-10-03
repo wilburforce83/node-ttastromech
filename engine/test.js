@@ -6,6 +6,6 @@ const droidChatter = require('../index.js');
 
 //droidChatter.bd1Rand(10,"sad"); // translate to astromech and play back
 
-// droidChatter.bd1Rand(2,"happy"); // translate to astromech and play back
+ droidChatter.bd1Rand(2,"happy"); // translate to astromech and play back
 
 // droidChatter.do("random");
